@@ -4,11 +4,11 @@ This is a proof of concept (POC) project demonstrating how to use RabbitMQ with 
 
 ## Project Structure
 
-├── Program.cs # Main entry point of the application
-├── Producer.cs # Contains the code for the RabbitMQ producer
-├── Consumer.cs # Contains the code for the RabbitMQ consumer
-├── RabbitMQPOC.csproj # .NET Core project file
-└── README.md # Project documentation
+* Program.cs # Main entry point of the application
+* Producer.cs # Contains the code for the RabbitMQ producer
+* Consumer.cs # Contains the code for the RabbitMQ consumer
+* RabbitMQPOC.csproj # .NET Core project file
+* README.md # Project documentation
 
 
 ## Prerequisites
@@ -26,5 +26,10 @@ This is a proof of concept (POC) project demonstrating how to use RabbitMQ with 
    docker pull rabbitmq:3-management
 
 2. Run the docker container
+    ```bash
+   docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 
-docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+3. Run the project (two instances: one for producer and one for consumer)
+    ```bash
+    dotnet run
+
